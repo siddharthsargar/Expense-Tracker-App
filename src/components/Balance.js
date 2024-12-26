@@ -1,11 +1,14 @@
 import React from 'react'
 
 const Balance = ({ transactions }) => {
-
   // Calculate totals
-  const totalIncome = transactions.filter((transaction) => transaction.type === 'income').reduce((total, transaction) => total + transaction.amount, 0);
-  const totalExpense = transactions.filter((transaction) => transaction.type === 'expense').reduce((total, transaction) => total + transaction.amount, 0);
+//   console.log("transactions is", transactions)
+  const totalIncome = transactions.filter((transaction) => transaction.type.toLowerCase() === 'income').reduce((total, transaction) => total + transaction.amount, 0);
+//   console.log("totalIncome is", totalIncome)
+  const totalExpense = transactions.filter((transaction) => transaction.type.toLowerCase() === 'expense').reduce((total, transaction) => total + transaction.amount, 0);
+//   console.log("totalExpense is", totalExpense)
   const totalBalance = totalIncome - totalExpense;
+//   console.log("totalBalance is", totalBalance)
 
   return (
     <div className='balance'>
