@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
 
-const TransactionForm = ({ addTransaction, setError}) => {
+const TransactionForm = ({ addTransaction, setError }) => {
   const [amount, setAmount] = useState('');
   const [category, setCategory] = useState('General');
-  const [transactionType, setTransactionType] = useState('income');
+  const [transactionType, setTransactionType] = useState('Income');
 
 
   // Handle form submission
@@ -32,20 +32,20 @@ const TransactionForm = ({ addTransaction, setError}) => {
     <form onSubmit={handleSubmit}>
         <div className='form-group'>
             <input
-            type='number'
-            placeholder='Amount'
-            value={amount}
-            onChange={(e) => setAmount(e.target.value)}
+              type='number'
+              placeholder='Amount'
+              value={amount}
+              onChange={(e) => setAmount(e.target.value)}
             />
         </div>
 
         <div className='form-group'>
             <select value={category} onChange={(e) => setCategory(e.target.value)}>
-                <option value={General}>General</option>
-                <option value={Groceries}>Groceries</option>
-                <option value={Rent}>Rent</option>
-                <option value={Entertainement}>Entertainement</option>
-                <option value={Salary}>Salary</option>
+                <option value="General">General</option>
+                <option value="Groceries">Groceries</option>
+                <option value="Rent">Rent</option>
+                <option value="Entertainement">Entertainement</option>
+                <option value="Salary">Salary</option>
             </select>
         </div>
 
